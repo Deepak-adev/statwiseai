@@ -77,48 +77,6 @@ const chartData = [
   { name: "Jun", responses: 900, satisfaction: 4.8 },
 ]
 
-const pieData = [
-  { name: "Very Satisfied", value: 45, color: "#10b981" },
-  { name: "Satisfied", value: 30, color: "#3b82f6" },
-  { name: "Neutral", value: 15, color: "#f59e0b" },
-  { name: "Dissatisfied", value: 10, color: "#ef4444" },
-]
-
-const aiInsights = [
-  { type: "success", message: "Detected 3 missing values and auto-imputed using median method", time: "2 min ago" },
-  {
-    type: "warning",
-    message: "Found potential bias in age demographics - 78% responses from 25-35 age group",
-    time: "5 min ago",
-  },
-  { type: "info", message: "Sentiment analysis complete: 87% positive responses detected", time: "8 min ago" },
-  { type: "success", message: "Data quality improved by 23% after cleaning operations", time: "12 min ago" },
-]
-
-const anomalyData = [
-  { time: "09:00", normal: 85, anomaly: 92, threshold: 90 },
-  { time: "10:00", normal: 88, anomaly: 89, threshold: 90 },
-  { time: "11:00", normal: 91, anomaly: 95, threshold: 90 },
-  { time: "12:00", normal: 87, anomaly: 88, threshold: 90 },
-  { time: "13:00", normal: 89, anomaly: 97, threshold: 90 },
-  { time: "14:00", normal: 86, anomaly: 87, threshold: 90 },
-]
-
-const predictiveData = [
-  { month: "Jul", actual: 4.6, predicted: 4.7, confidence: 0.85 },
-  { month: "Aug", actual: null, predicted: 4.8, confidence: 0.82 },
-  { month: "Sep", actual: null, predicted: 4.9, confidence: 0.78 },
-  { month: "Oct", actual: null, predicted: 4.7, confidence: 0.75 },
-]
-
-const sentimentData = [
-  { category: "Product Quality", positive: 85, negative: 15, neutral: 0 },
-  { category: "Customer Service", positive: 78, negative: 12, neutral: 10 },
-  { category: "Pricing", positive: 65, negative: 25, neutral: 10 },
-  { category: "User Experience", positive: 92, negative: 5, neutral: 3 },
-  { category: "Support", positive: 88, negative: 8, neutral: 4 },
-]
-
 const collaborators = [
   { name: "Sarah Chen", role: "Data Analyst", status: "online", avatar: "/placeholder-user.png" },
   { name: "Mike Johnson", role: "Product Manager", status: "away", avatar: "/placeholder-user.png" },
@@ -499,10 +457,8 @@ export default function StatWiseDashboard() {
   const [isUploading, setIsUploading] = useState(false)
   const [realTimeScore, setRealTimeScore] = useState(4.6)
   const [streamingInsight, setStreamingInsight] = useState("")
-  const [isListening, setIsListening] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [showNotifications, setShowNotifications] = useState(false)
-  const [isPlaying, setIsPlaying] = useState(false)
   const [selectedTimeRange, setSelectedTimeRange] = useState("7d")
   const [aiChatMessages, setAiChatMessages] = useState([
     { role: "assistant", content: "Hello! I'm your AI analytics assistant. Ask me anything about your survey data." },
