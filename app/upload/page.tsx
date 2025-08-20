@@ -27,7 +27,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function UploadPage() {
   const [uploadStep, setUploadStep] = useState(1)
-  const [isUploading, setIsUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [fileName, setFileName] = useState("")
 
@@ -38,7 +37,6 @@ export default function UploadPage() {
     if (file) {
       setFileName(file.name)
       setDataFileName(file.name)
-      setIsUploading(true)
       setUploadStep(2)
 
       const reader = new FileReader()
@@ -59,7 +57,6 @@ export default function UploadPage() {
         if (progress >= 100) {
           clearInterval(interval)
           setTimeout(() => {
-            setIsUploading(false)
             setUploadStep(3)
           }, 1000)
         }
@@ -275,7 +272,6 @@ export default function UploadPage() {
                     onClick={() => {
                       setFileName("sample_survey_data.csv")
                       setDataFileName("sample_survey_data.csv")
-                      setIsUploading(true)
                       setUploadStep(2)
 
                       const sampleData = parseCSV(`Name,Age,Satisfaction,Comments
@@ -294,7 +290,6 @@ Charlie Wilson,42,2,"Not satisfied"`)
                         if (progress >= 100) {
                           clearInterval(interval)
                           setTimeout(() => {
-                            setIsUploading(false)
                             setUploadStep(3)
                           }, 1000)
                         }
