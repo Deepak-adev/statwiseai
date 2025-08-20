@@ -2084,7 +2084,7 @@ export default function StatWiseDashboard() {
                     </CardHeader>
                     <CardContent>
                       <ResponsiveContainer width="100%" height={400}>
-                        <Treemap data={treemapData} dataKey="size" ratio={4 / 3} stroke="#fff" fill="#3b82f6" />
+                        <Treemap data={treemapData} dataKey="size" stroke="#fff" fill="#3b82f6" />
                       </ResponsiveContainer>
                     </CardContent>
                   </Card>
