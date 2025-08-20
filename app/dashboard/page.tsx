@@ -66,26 +66,7 @@ import {
   Treemap,
 } from "recharts"
 
-// Mock data for demo
-const sampleData = [
-  {
-    id: 1,
-    question: "How satisfied are you with our service?",
-    response: "Very Satisfied",
-    score: 5,
-    timestamp: "2024-01-15 10:30",
-  },
-  { id: 2, question: "Would you recommend us?", response: "Yes", score: 5, timestamp: "2024-01-15 11:45" },
-  { id: 3, question: "Rate our customer support", response: "Good", score: 4, timestamp: "2024-01-15 12:15" },
-  {
-    id: 4,
-    question: "How likely to purchase again?",
-    response: "Very Likely",
-    score: 5,
-    timestamp: "2024-01-15 13:20",
-  },
-  { id: 5, question: "Overall experience rating", response: "Excellent", score: 5, timestamp: "2024-01-15 14:10" },
-]
+// Mock data for demo - removed unused variable
 
 const chartData = [
   { name: "Jan", responses: 400, satisfaction: 4.2 },
@@ -517,24 +498,20 @@ export default function StatWiseDashboard() {
   const [dataQuality, setDataQuality] = useState(87)
   const [isUploading, setIsUploading] = useState(false)
   const [realTimeScore, setRealTimeScore] = useState(4.6)
-  const [chatMessage, setChatMessage] = useState("")
   const [streamingInsight, setStreamingInsight] = useState("")
   const [isListening, setIsListening] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [showNotifications, setShowNotifications] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedTimeRange, setSelectedTimeRange] = useState("7d")
-  const [selectedInsight, setSelectedInsight] = useState<any>(null)
   const [aiChatMessages, setAiChatMessages] = useState([
     { role: "assistant", content: "Hello! I'm your AI analytics assistant. Ask me anything about your survey data." },
   ])
   const [currentChatMessage, setCurrentChatMessage] = useState("")
   const [isAiTyping, setIsAiTyping] = useState(false)
-  const [selectedRecommendation, setSelectedRecommendation] = useState(null)
   const [insightFilter, setInsightFilter] = useState("all")
-  const [showAdvancedMetrics, setShowAdvancedMetrics] = useState(false)
 
-  const { csvData, fileName } = useData()
+  const { csvData } = useData()
   const [insights, setInsights] = useState<string[]>([])
 
   // Simulate real-time updates
@@ -575,25 +552,6 @@ export default function StatWiseDashboard() {
       setIsUploading(false)
       setDataQuality(Math.min(100, dataQuality + Math.random() * 10))
     }, 2000)
-  }
-
-  const toggleVoiceInput = () => {
-    setIsListening(!isListening)
-    if (!isListening) {
-      // Simulate voice recognition
-      setTimeout(() => {
-        setChatMessage("Show me satisfaction trends for the last month")
-        setIsListening(false)
-      }, 3000)
-    }
-  }
-
-  const toggleAudioInsights = () => {
-    setIsPlaying(!isPlaying)
-    // Simulate audio playback
-    if (!isPlaying) {
-      setTimeout(() => setIsPlaying(false), 15000)
-    }
   }
 
   const handleLogout = () => {

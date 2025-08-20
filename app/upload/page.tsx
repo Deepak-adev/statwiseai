@@ -27,11 +27,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function UploadPage() {
   const [uploadStep, setUploadStep] = useState(1)
-  const [isUploading, setIsUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
   const [fileName, setFileName] = useState("")
 
-  const { setCsvData, setIsLoading: setDataLoading, setFileName: setDataFileName } = useData()
+  const { setCsvData, setFileName: setDataFileName } = useData()
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -265,7 +264,7 @@ export default function UploadPage() {
                     <div>
                       <h4 className="font-semibold text-blue-900">Try with Sample Data</h4>
                       <p className="text-sm text-blue-700">
-                        Don't have data ready? Use our sample survey dataset to explore features
+                        Don&apos;t have data ready? Use our sample survey dataset to explore features
                       </p>
                     </div>
                   </div>

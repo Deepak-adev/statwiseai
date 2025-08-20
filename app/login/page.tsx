@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
-import { Brain, Mail, Lock, User, ArrowLeft, CheckCircle, Sparkles } from "lucide-react"
+import { Mail, Lock, User, ArrowLeft, CheckCircle, Sparkles } from "lucide-react"
 
 export default function LoginPage() {
   const [isSignUp, setIsSignUp] = useState(false)
@@ -192,7 +192,7 @@ export default function LoginPage() {
             {/* Features for Sign Up */}
             {isSignUp && (
               <div className="mt-6 space-y-3">
-                <div className="text-sm text-slate-600 font-medium">What you'll get:</div>
+                <div className="text-sm text-slate-600 font-medium">What you&apos;ll get:</div>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2 text-sm text-slate-600">
                     <CheckCircle className="w-4 h-4 text-green-500" />
