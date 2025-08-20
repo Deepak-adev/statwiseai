@@ -967,7 +967,6 @@ export default function StatWiseDashboard() {
                       <Card
                         key={index}
                         className="cursor-pointer hover:shadow-md transition-shadow"
-                        onClick={() => setSelectedInsight(insight)}
                       >
                         <CardHeader className="pb-3">
                           <div className="flex items-start justify-between">
